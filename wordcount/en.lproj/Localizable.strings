@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  word count
+
+  Created by Peter Choi on 2018. 9. 11..
+  Copyright © 2018년 RiDsoft. All rights reserved.
+*/
+
+"app_name" = "Writing Counter";
+"confirm" = "Confirm";
+"cancel" = "cancel";
+"clear" = "Clear all";
+"delete" = "Delete";
+"text_view_placeholder" = "Start typing (or paste)";
+"words" = "Words";
+"chars" = "Characters";
+"not_writed" = "Start writing";
+"alert_clear" = "Clear";
+"alert_clear_msg" = "Would you like to erase all of your writings?";
+"alert_space" = "Space";
+"alert_space_msg" = "Current space setting: ";
+"alert_space_include" = "Include space and enter";
+"alert_space_include_space" = "Include only space";
+"alert_space_include_enter" = "Include only enter";
+"alert_space_exclude" = "Exclude both";
+"alert_save" = "Save";
+"alert_save_message" = "Would you like to save the document?";
+"alert_save_success" = "Document saved";
+"alert_load" = "Load";
+"alert_load_message" = "Would you like to load following document?";
+"alert_no_document" = "No document";
+"alert_no_document_message" = "Can't find previously saved document.";
+"alert_delete" = "Delete";
+"alert_delete_message" = "Would you like to delete this document?";
+"alert_clear_all_doc" = "Would you like to remove all documents?";
+
+// Options
+"divider_display" = "Display options";
+"divider_count" = "Count options";
+"option_space" = "Space";
+"option_display" = "Display";
+"option_symbols" = "Exclude Symbols";
+"option_symbols_custom" = "Customize symbols to exclude";
+"alert_symbols_title" = "Symbols to exclude";
+"alert_symbols_content" = "";
+
+// !Update lists
+"alet_update" = "What\'s new";
+"change_logs" = "1. Paste from the clipboard is added.\n\n2. Copy button is added on the toolbar.\n\n3. Saving/ Loading document is now \"documents.\"";

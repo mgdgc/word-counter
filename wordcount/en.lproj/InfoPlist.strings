@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  word count
+
+  Created by Peter Choi on 2018. 9. 11..
+  Copyright © 2018년 RiDsoft. All rights reserved.
+*/
+
+CFBundleName = "Writing Counter";

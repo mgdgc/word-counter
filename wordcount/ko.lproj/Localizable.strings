@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  word count
+
+  Created by Peter Choi on 2018. 9. 11..
+  Copyright © 2018년 RiDsoft. All rights reserved.
+*/
+
+"app_name" = "워드 카운터";
+"confirm" = "확인";
+"cancel" = "취소";
+"clear" = "모두 지우기";
+"delete" = "삭제";
+"text_view_placeholder" = "글을 입력하거나 붙여넣기 하세요";
+"words" = "단어 수";
+"chars" = "글자 수";
+"not_writed" = "입력을 시작하세요";
+"alert_clear" = "모두 지우기";
+"alert_clear_msg" = "작성한 내용을 모두 지우시겠습니까?";
+"alert_space" = "공백";
+"alert_space_msg" = "현재 설정: ";
+"alert_space_include" = "공백과 줄바꿈 포함";
+"alert_space_include_space" = "공백만 포함";
+"alert_space_include_enter" = "줄바꿈만 포함";
+"alert_space_exclude" = "모두 제외";
+"alert_save" = "저장";
+"alert_save_message" = "저장하시겠습니까?";
+"alert_save_success" = "내용을 저장했습니다.";
+"alert_load" = "불러오기";
+"alert_load_message" = "다음 내용을 불러오시겠습니까?";
+"alert_no_document" = "문서 없음";
+"alert_no_document_message" = "저장된 문서가 없습니다.";
+"alert_delete" = "삭제";
+"alert_delete_message" = "이 내용을 삭제하시겠습니까?";
+"alert_clear_all_doc" = "모든 문서를 삭제하시겠습니까?";
+
+// Options
+"divider_display" = "표시 옵션";
+"divider_count" = "셈 옵션";
+"option_space" = "공백";
+"option_display" = "표시";
+"option_symbols" = "특수기호 제외";
+"option_symbols_custom" = "제외할 특수기호 사용자화";
+
+// !Update lists
+"alet_update" = "새로운 기능";
+"change_logs" = "1. 클립보드에서 붙여넣기가 추가되었습니다.\n2. 이제 간단하게 툴바의 버튼을 눌러 텍스트를 복사할 수 있습니다.\n3. 저장/ 불러오기에 여러 글을 저장할 수 있게 되었습니다.";
