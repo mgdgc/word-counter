@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     private static let KEY_SAVED_DOC = "saved_doc"
     
-    @IBOutlet weak var infoView: RoundedBackgroundLabel!
+    @IBOutlet weak var infoView: RoundedLabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
     
@@ -26,22 +26,22 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        navigationController?.navigationBar.barTintColor = ColorManager.colorAccent
-        navigationController?.navigationBar.tintColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
+        // Navigation bar
+        navigationController?.navigationBar.barTintColor = UIColor(named: "bg_primary")
         navigationController?.navigationItem.title = NSLocalizedString("app_name", comment: "app_name")
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isHidden = true
         
         textView.delegate = self
         
-        initTextView()
+        initView()
         setInfoLabel()
         
     }
     
-    private func initTextView() {
+    private func initView() {
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")
         textView.textColor = UIColor.lightGray
+        textView.textContainerInset = UIEdgeInsetsMake(8, 16, 8, 16)
     }
     
     private func addBottomSheet() {
@@ -65,7 +65,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
         let confirm = UIAlertAction(title: NSLocalizedString("clear", comment: "clear"), style: .destructive) { (action) in
             self.isEdited = false
-            self.initTextView()
+            self.initView()
             self.setInfoLabel()
             self.view.endEditing(true)
         }
@@ -196,7 +196,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
             isEdited = false
-            initTextView()
+            initView()
             setInfoLabel()
         }
     }
