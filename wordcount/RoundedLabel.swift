@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class RoundedBackgroundLabel : UILabel {
+class RoundedLabel : UILabel {
     
     @IBInspectable var topInset: CGFloat = 8.0
     @IBInspectable var bottomInset: CGFloat = 8.0
@@ -17,8 +17,8 @@ class RoundedBackgroundLabel : UILabel {
     @IBInspectable var rightInset: CGFloat = 16.0
     
     override func layoutSubviews() {
-        self.layer.cornerRadius = self.frame.height/2
-        self.layer.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.06).cgColor
+        self.layer.cornerRadius = self.frame.height / 2
+        self.clipsToBounds = true
     }
     
     override func drawText(in rect: CGRect) {
@@ -31,5 +31,9 @@ class RoundedBackgroundLabel : UILabel {
         let size = super.intrinsicContentSize
         return CGSize(width: size.width + leftInset + rightInset,
                       height: size.height + topInset + bottomInset)
+    }
+    
+    func setBackgroundColor(newColor: UIColor) {
+        self.layer.backgroundColor = newColor.cgColor
     }
 }
