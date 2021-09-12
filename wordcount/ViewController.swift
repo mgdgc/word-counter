@@ -12,7 +12,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     private static let KEY_SAVED_DOC = "saved_doc"
     
-    @IBOutlet weak var infoView: RoundedLabel!
+    @IBOutlet weak var infoView: RoundedView!
+    @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
     
@@ -42,6 +43,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")
         textView.textColor = UIColor.lightGray
         textView.textContainerInset = UIEdgeInsetsMake(8, 16, 8, 16)
+        
+        infoView.showShadow()
     }
     
     private func addBottomSheet() {
@@ -214,9 +217,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
             let charsCount: Int = countLetters()
             
             let info = "\(words): \(wordsCount), \(chars): \(charsCount)"
-            infoView.text = info
+            infoLabel.text = info
         } else {
-            infoView.text = NSLocalizedString("not_writed", comment: "not_writed")
+            infoLabel.text = NSLocalizedString("not_writed", comment: "not_writed")
         }
         
     }
