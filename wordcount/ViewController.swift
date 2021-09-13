@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        
         // Navigation bar
         navigationController?.navigationBar.barTintColor = UIColor(named: "bg_primary")
         navigationController?.navigationItem.title = NSLocalizedString("app_name", comment: "app_name")
