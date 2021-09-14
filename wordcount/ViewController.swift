@@ -45,7 +45,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     private func initView() {
         // Constraints
-        marginTopTextView.constant = infoView.frame.minY
+        marginTopTextView.constant = infoView.frame.maxY + 24
         
         // TextView settings
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")

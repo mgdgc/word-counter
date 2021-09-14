@@ -21,13 +21,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3B3-GW-mUx">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                                        <rect key="frame" x="0.0" y="-88" width="375" height="1000"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xep-Q3-YXK">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="740"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="360"/>
                                                 <color key="backgroundColor" name="bg_secondary"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="740" id="nh3-fc-8mN"/>
+                                                    <constraint firstAttribute="height" constant="360" id="nh3-fc-8mN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -36,9 +36,9 @@
                                         <color key="backgroundColor" name="bg_primary"/>
                                         <constraints>
                                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="centerX" secondItem="3B3-GW-mUx" secondAttribute="centerX" id="6fn-Fe-iWN"/>
-                                            <constraint firstItem="Xep-Q3-YXK" firstAttribute="top" secondItem="3B3-GW-mUx" secondAttribute="top" id="74b-HV-1iX"/>
                                             <constraint firstAttribute="height" constant="1000" id="NSI-aL-HEJ"/>
                                             <constraint firstAttribute="trailing" secondItem="Xep-Q3-YXK" secondAttribute="trailing" id="fuq-qs-PYH"/>
+                                            <constraint firstItem="Xep-Q3-YXK" firstAttribute="top" secondItem="3B3-GW-mUx" secondAttribute="top" id="sTv-eu-KA2"/>
                                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="leading" secondItem="3B3-GW-mUx" secondAttribute="leading" id="yEQ-qO-Wbe"/>
                                         </constraints>
                                     </view>
@@ -46,8 +46,8 @@
                                 <constraints>
                                     <constraint firstItem="3B3-GW-mUx" firstAttribute="bottom" secondItem="ih4-zZ-NaY" secondAttribute="bottom" id="DR4-cb-1CC"/>
                                     <constraint firstItem="3B3-GW-mUx" firstAttribute="trailing" secondItem="ih4-zZ-NaY" secondAttribute="trailing" id="Fn3-Lw-9eB"/>
-                                    <constraint firstItem="3B3-GW-mUx" firstAttribute="top" secondItem="ih4-zZ-NaY" secondAttribute="top" id="Lsv-4d-6pI"/>
                                     <constraint firstItem="3B3-GW-mUx" firstAttribute="leading" secondItem="ih4-zZ-NaY" secondAttribute="leading" id="Zvp-rm-Y6y"/>
+                                    <constraint firstItem="ih4-zZ-NaY" firstAttribute="top" secondItem="3B3-GW-mUx" secondAttribute="top" constant="88" id="qzc-4n-ple"/>
                                     <constraint firstItem="3B3-GW-mUx" firstAttribute="width" secondItem="T3G-y7-jXr" secondAttribute="width" id="xf4-Bm-UbX"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="ih4-zZ-NaY"/>
@@ -201,7 +201,7 @@
                     <connections>
                         <outlet property="infoLabel" destination="BXT-Ho-JgY" id="0Uv-du-fF5"/>
                         <outlet property="infoView" destination="ZgG-ci-h1J" id="eGA-7p-Md0"/>
-                        <outlet property="marginTopTextView" destination="74b-HV-1iX" id="cyB-sT-nhU"/>
+                        <outlet property="marginTopTextView" destination="sTv-eu-KA2" id="sRy-H3-d5u"/>
                         <outlet property="moreButton" destination="Pm7-dh-Eu3" id="5B4-Ob-fLk"/>
                         <outlet property="textView" destination="Xep-Q3-YXK" id="zZA-wB-Y1h"/>
                     </connections>
