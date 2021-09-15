@@ -11,6 +11,15 @@ import UIKit
 
 class RoundedView : UIView {
     
+    var cornerRadius: CGFloat {
+        get {
+            return self.layer.cornerRadius
+        }
+        set {
+            self.layer.cornerRadius = newValue
+        }
+    }
+    
     override func layoutSubviews() {
         self.layer.cornerRadius = frame.size.height / 2
     }
