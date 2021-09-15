@@ -17,8 +17,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
     
-    @IBOutlet weak var marginTopTextView: NSLayoutConstraint!
-    
     
     private var isEdited = false
     private var spaceType: SpaceType = .both
@@ -45,12 +43,11 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     private func initView() {
         // Constraints
-        marginTopTextView.constant = infoView.frame.maxY + 24
         
         // TextView settings
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")
         textView.textColor = UIColor.lightGray
-        textView.textContainerInset = UIEdgeInsetsMake(8, 16, 8, 16)
+        textView.textContainerInset = UIEdgeInsetsMake(infoView.frame.height + 24, 16, 8, 16)
         
         // InfoView settings
         infoView.showShadow()
