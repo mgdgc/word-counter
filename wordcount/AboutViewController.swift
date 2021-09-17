@@ -22,6 +22,10 @@ class AboutViewController: UIViewController {
         versionView.text = "v\(getVersion())"
     }
     
+    @IBAction func onCloseButtonClick(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func onLicensesButtonClick(_ sender: UIButton) {
         let content = "...";
         
