@@ -13,6 +13,8 @@ class AboutViewController: UIViewController {
     @IBOutlet weak var appNameView: UILabel!
     @IBOutlet weak var versionView: UILabel!
     
+    @IBOutlet weak var buttonView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,8 @@ class AboutViewController: UIViewController {
         
         appNameView.text = NSLocalizedString("app_name", comment: "app_name")
         versionView.text = "v\(getVersion())"
+        
+        buttonView.layer.cornerRadius = 8
     }
     
     @IBAction func onCloseButtonClick(_ sender: UIButton) {
