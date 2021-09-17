@@ -53,18 +53,24 @@
                                             <segue destination="IqX-j3-Xnv" kind="presentation" id="CDp-PI-oGD"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-BE-H0l">
-                                        <rect key="frame" x="8" y="3" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-BE-H0l">
+                                        <rect key="frame" x="12" y="0.0" width="21" height="36.333333333333336"/>
+                                        <color key="tintColor" name="color_selectable"/>
+                                        <state key="normal" image="doc.on.clipboard" catalog="system"/>
+                                        <connections>
+                                            <action selector="onPasteButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3b-bv-xEB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="bg_secondary"/>
                                 <constraints>
                                     <constraint firstItem="BXT-Ho-JgY" firstAttribute="centerX" secondItem="ZgG-ci-h1J" secondAttribute="centerX" id="0m2-TB-TKG"/>
                                     <constraint firstItem="BXT-Ho-JgY" firstAttribute="leading" secondItem="ZgG-ci-h1J" secondAttribute="leading" constant="8" id="1TQ-fB-yVK"/>
+                                    <constraint firstItem="dMY-BE-H0l" firstAttribute="top" secondItem="ZgG-ci-h1J" secondAttribute="top" id="1cF-FI-PyR"/>
+                                    <constraint firstItem="dMY-BE-H0l" firstAttribute="centerY" secondItem="ZgG-ci-h1J" secondAttribute="centerY" id="55e-sq-7hR"/>
                                     <constraint firstItem="837-Yj-Aet" firstAttribute="top" secondItem="ZgG-ci-h1J" secondAttribute="top" id="5ft-b5-EQo"/>
                                     <constraint firstAttribute="bottom" secondItem="837-Yj-Aet" secondAttribute="bottom" id="9tL-9Y-WzC"/>
+                                    <constraint firstAttribute="bottom" secondItem="dMY-BE-H0l" secondAttribute="bottom" id="BZ2-uk-LVb"/>
                                     <constraint firstItem="837-Yj-Aet" firstAttribute="centerY" secondItem="ZgG-ci-h1J" secondAttribute="centerY" id="DZH-hX-NIH"/>
                                     <constraint firstAttribute="bottom" secondItem="BXT-Ho-JgY" secondAttribute="bottom" constant="8" id="HJt-Zl-cqG"/>
                                     <constraint firstItem="BXT-Ho-JgY" firstAttribute="top" secondItem="ZgG-ci-h1J" secondAttribute="top" constant="8" id="JNa-oR-kE9"/>
@@ -77,6 +83,7 @@
                                     <constraint firstAttribute="width" constant="260" id="h27-E4-g81">
                                         <variation key="widthClass=compact" constant="300"/>
                                     </constraint>
+                                    <constraint firstItem="dMY-BE-H0l" firstAttribute="leading" secondItem="ZgG-ci-h1J" secondAttribute="leading" constant="12" id="v4M-Ul-eJQ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -176,9 +183,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Word counter" id="XsN-ue-VRE">
-                        <barButtonItem key="leftBarButtonItem" title="Paste" id="1v6-IA-KDz"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Word counter" id="XsN-ue-VRE"/>
                     <connections>
                         <outlet property="infoLabel" destination="BXT-Ho-JgY" id="0Uv-du-fF5"/>
                         <outlet property="infoView" destination="ZgG-ci-h1J" id="eGA-7p-Md0"/>
@@ -699,6 +704,7 @@
     </scenes>
     <resources>
         <image name="baseline_more_horiz_white_24pt" width="24" height="24"/>
+        <image name="doc.on.clipboard" catalog="system" width="116" height="128"/>
         <image name="foreground.png" width="1024" height="1024"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>

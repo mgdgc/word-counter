@@ -65,6 +65,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         present(bottomSheetVC, animated: true, completion: nil)
     }
     
+    @IBAction func onPasteButtonClick(_ sender: UIButton) {
+    }
+    
     @IBAction func onClearButtonClick(_ sender: UIBarButtonItem) {
         let title = NSLocalizedString("alert_clear", comment: "alert_clear")
         let message = NSLocalizedString("alert_clear_msg", comment: "alert_clear_msg")
