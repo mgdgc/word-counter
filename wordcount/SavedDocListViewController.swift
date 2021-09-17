@@ -50,7 +50,7 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         return true
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             if !self.dataManager.removeDocument(doc: data[indexPath.row]) {
                 let alert = UIAlertController(title: "Failed", message: "Failed", preferredStyle: .alert)
