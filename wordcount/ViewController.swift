@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         
         // TextView settings
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")
-        textView.textColor = UIColor.lightGray
+        
         textView.textContainerInset = UIEdgeInsets(top: infoView.frame.height + 24, left: 16, bottom: 8, right: 16)
         
         // InfoView settings
