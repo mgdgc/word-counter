@@ -41,30 +41,20 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         
     }
     
+    // MARK: - View initialization
     private func initView() {
         // Constraints
         
         // TextView settings
         textView.text = NSLocalizedString("text_view_placeholder", comment: "text_view_placeholder")
-        
         textView.textContainerInset = UIEdgeInsets(top: infoView.frame.height + 24, left: 16, bottom: 8, right: 16)
+        textView.alpha = 0.35
         
         // InfoView settings
         infoView.showShadow()
     }
     
-    private func addBottomSheet() {
-        let bottomSheetVC = storyboard?.instantiateViewController(withIdentifier: "optionsViewController") as! OptionsViewController
-        
-        let height = view.frame.height
-        let width = view.frame.width
-        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
-        
-        bottomSheetVC.modalPresentationStyle = .overFullScreen
-        
-        present(bottomSheetVC, animated: true, completion: nil)
-    }
-    
+    // MARK: - Button click listeners
     @IBAction func onPasteButtonClick(_ sender: UIButton) {
     }
     
@@ -146,6 +136,19 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         save(sender)
     }
     
+    // MARK: - BottomSheet configurations
+    private func addBottomSheet() {
+        let bottomSheetVC = storyboard?.instantiateViewController(withIdentifier: "optionsViewController") as! OptionsViewController
+        
+        let height = view.frame.height
+        let width = view.frame.width
+        bottomSheetVC.view.frame = CGRect(x: 0, y: self.view.frame.maxY, width: width, height: height)
+        
+        bottomSheetVC.modalPresentationStyle = .overFullScreen
+        
+        present(bottomSheetVC, animated: true, completion: nil)
+    }
+    
     private func save(_ barbutton: UIBarButtonItem?) {
         let alert = UIAlertController(title: NSLocalizedString("alert_save", comment: "alert_save"), message: NSLocalizedString("alert_save_message", comment: "alert_save_message"), preferredStyle: .actionSheet)
         let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) {
@@ -162,6 +165,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         present(alert, animated: true, completion: nil)
     }
     
+    // MARK: - Document saving
     private func saveDocument() {
         let manager = DataManager()
         if let doc = document {
@@ -193,21 +197,23 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         }
     }
     
+    // MARK: - UITextView configurations
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+        if !isEdited {
             isEdited = true
-            textView.text = ""
-            textView.textColor = UIColor.black
+            textView.text = nil
+            textView.alpha = 0.6
         }
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text == "" {
+        if textView.text.isEmpty {
             isEdited = false
+            textView.alpha = 0.35
             initView()
             setInfoLabel()
         }
@@ -217,6 +223,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         setInfoLabel()
     }
     
+    // MARK: - InfoView configurations
     private func setInfoLabel() {
         let words = NSLocalizedString("words", comment: "words")
         let chars = NSLocalizedString("chars", comment: "chars")

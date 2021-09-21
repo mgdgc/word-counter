@@ -23,6 +23,7 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -63,6 +64,10 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
             self.data.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    @IBAction func onCloseButtonClick(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onAllClearClick(_ sender: UIBarButtonItem) {
