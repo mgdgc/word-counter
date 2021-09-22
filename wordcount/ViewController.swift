@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var toolView: RoundedView!
     
     
     private var isEdited = false
@@ -52,13 +53,16 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         
         // InfoView settings
         infoView.showShadow()
+        
+        // ToolView settins
+        toolView.showShadow()
     }
     
     // MARK: - Button click listeners
     @IBAction func onPasteButtonClick(_ sender: UIButton) {
     }
     
-    @IBAction func onClearButtonClick(_ sender: UIBarButtonItem) {
+    @IBAction func onClearButtonClick(_ sender: Any) {
         let title = NSLocalizedString("alert_clear", comment: "alert_clear")
         let message = NSLocalizedString("alert_clear_msg", comment: "alert_clear_msg")
         
@@ -75,12 +79,12 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         alert.addAction(cancel)
         alert.addAction(confirm)
         
-        setActionSheet(alert, barButton: sender)
+        setActionSheet(alert, barButton: sender as? UIBarButtonItem)
         
         present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func onSpaceSettingButtonClick(_ sender: UIBarButtonItem) {
+    @IBAction func onSpaceSettingButtonClick(_ sender: Any) {
         let title = NSLocalizedString("alert_space", comment: "alert_space")
         let message = NSLocalizedString("alert_space_msg", comment: "alert_space_msg") + getSpaceTypeTitle(type: spaceType)
         
@@ -110,7 +114,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         alert.addAction(neither)
         alert.addAction(cancel)
         
-        setActionSheet(alert, barButton: sender)
+        setActionSheet(alert, barButton: sender as? UIBarButtonItem)
         
         present(alert, animated: true, completion: nil)
     }
@@ -132,8 +136,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         })
     }
     
-    @IBAction func onSaveButtonClick(_ sender: UIBarButtonItem) {
-        save(sender)
+    @IBAction func onSaveButtonClick(_ sender: Any) {
+        save(sender as? UIBarButtonItem)
     }
     
     // MARK: - BottomSheet configurations
