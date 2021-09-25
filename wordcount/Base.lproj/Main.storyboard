@@ -240,7 +240,13 @@
                             <constraint firstItem="5GW-aO-hke" firstAttribute="top" secondItem="xh4-Ok-bDI" secondAttribute="top" id="WFq-2H-52O"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Word Counter" id="r37-dM-8Qj"/>
+                    <navigationItem key="navigationItem" title="Word Counter" id="r37-dM-8Qj">
+                        <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="fpy-vS-jyd">
+                            <connections>
+                                <segue destination="IqX-j3-Xnv" kind="show" id="zR6-uN-2Wx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5GW-aO-hke" id="tev-vT-E1Y"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="segCounter" id="Cku-jk-gtE"/>
@@ -632,7 +638,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-yP-KKq">
-                                <rect key="frame" x="329" y="64" width="30" height="30"/>
+                                <rect key="frame" x="329" y="108" width="30" height="30"/>
                                 <connections>
                                     <action selector="onCloseButtonClick:" destination="IqX-j3-Xnv" eventType="touchUpInside" id="iKe-Af-qbL"/>
                                 </connections>
@@ -653,6 +659,7 @@
                             <constraint firstItem="h3m-H5-DPU" firstAttribute="centerX" secondItem="vbY-08-uO1" secondAttribute="centerX" id="zfn-mz-Ks3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="8Ce-0S-C72"/>
                     <connections>
                         <outlet property="appNameView" destination="gpB-Jk-2NL" id="VwI-Fq-BaF"/>
                         <outlet property="versionView" destination="r3j-th-6Qq" id="vFZ-5v-0Qx"/>
@@ -694,6 +701,7 @@
         <image name="doc.on.clipboard" catalog="system" width="116" height="128"/>
         <image name="foreground.png" width="1024" height="1024"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="info.circle.fill" catalog="system" width="128" height="121"/>
         <image name="twotone_done_white_24pt" width="24" height="24"/>
         <namedColor name="bg_primary">
