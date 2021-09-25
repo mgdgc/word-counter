@@ -13,7 +13,7 @@ protocol OnSavedItemSelectedListener {
 }
 
 class SavedDocListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let dataManager = DataManager()
@@ -21,7 +21,7 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         tableView.delegate = self
@@ -36,41 +36,73 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         performSegue(withIdentifier: "segCounter", sender: nil)
     }
     
+    // MARK:  - TableView
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SavedListCell")
-        
-        let content = data[indexPath.row].content
-        cell?.textLabel?.text = content
-        
-        return cell!
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            if !self.dataManager.removeDocument(doc: data[indexPath.row]) {
-                let alert = UIAlertController(title: "Failed", message: "Failed", preferredStyle: .alert)
-                let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { (action) in
-                    
-                }
-                alert.addAction(confirm)
-                present(alert, animated: true, completion: nil)
-            }
-            self.data.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        if (section == 0) {
+            return 1
+        } else {
+            return data.count
         }
     }
     
-    @IBAction func onCloseButtonClick(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if (section == 0) {
+            return nil
+        } else {
+            return NSLocalizedString("section_saved_documents", comment: "")
+        }
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if (indexPath.section == 0) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NewCounterCell")
+            
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SavedListCell")
+            
+            let content = data[indexPath.row].content
+            cell?.textLabel?.text = content
+            
+            return cell!
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return indexPath.section > 0
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (indexPath.section == 0) {
+            if editingStyle == .delete {
+                if !self.dataManager.removeDocument(doc: data[indexPath.row]) {
+                    let alert = UIAlertController(title: "Failed", message: "Failed", preferredStyle: .alert)
+                    let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { (action) in
+                        
+                    }
+                    alert.addAction(confirm)
+                    present(alert, animated: true, completion: nil)
+                }
+                self.data.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 0) {
+            performSegue(withIdentifier: "segCounter", sender: nil)
+        } else {
+            
+        }
+    }
+    
+    // MARK: - Button click listeners
     
     @IBAction func onAllClearClick(_ sender: UIBarButtonItem) {
         
@@ -103,20 +135,9 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     private func initData() {
         data = dataManager.getSavedDocuments()
         tableView.reloadData()
     }
-
+    
 }

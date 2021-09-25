@@ -44,6 +44,9 @@
 "alert_symbols_title" = "Symbols to exclude";
 "alert_symbols_content" = "";
 
+// SavedDocListViewController
+"section_saved_documents" = "Saved";
+
 // !Update lists
 "alet_update" = "What\'s new";
 "change_logs" = "1. Paste from the clipboard is added.\n\n2. Copy button is added on the toolbar.\n\n3. Saving/ Loading document is now \"documents.\"";
