@@ -33,7 +33,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         // Navigation bar
         navigationController?.navigationBar.barTintColor = UIColor(named: "bg_primary")
         navigationController?.navigationItem.title = NSLocalizedString("app_name", comment: "app_name")
-        navigationController?.navigationBar.isHidden = true
         
         textView.delegate = self
         
