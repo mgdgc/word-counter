@@ -16,7 +16,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
-    @IBOutlet weak var toolView: RoundedView!
     
     
     private var isEdited = false
@@ -53,8 +52,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         // InfoView settings
         infoView.showShadow()
         
-        // ToolView settins
-        toolView.showShadow()
     }
     
     // MARK: - Button click listeners

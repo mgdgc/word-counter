@@ -47,16 +47,20 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="837-Yj-Aet">
-                                        <rect key="frame" x="301" y="0.0" width="42" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="837-Yj-Aet">
+                                        <rect key="frame" x="293" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="PQW-JH-sPV"/>
                                             <constraint firstAttribute="width" constant="42" id="paS-YK-NXN"/>
                                         </constraints>
                                         <color key="tintColor" name="color_selectable"/>
+                                        <state key="normal" image="baseline_space_bar_black_24pt"/>
+                                        <connections>
+                                            <action selector="onSpaceSettingButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0p0-FH-cOa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dMY-BE-H0l">
-                                        <rect key="frame" x="4" y="0.0" width="42" height="42"/>
+                                        <rect key="frame" x="8" y="0.0" width="42" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="EZW-DZ-PAn"/>
                                             <constraint firstAttribute="width" constant="42" id="ave-hB-BJj"/>
@@ -85,11 +89,11 @@
                                     </constraint>
                                     <constraint firstItem="BXT-Ho-JgY" firstAttribute="centerY" secondItem="ZgG-ci-h1J" secondAttribute="centerY" id="U7e-5m-mMG"/>
                                     <constraint firstAttribute="trailing" secondItem="BXT-Ho-JgY" secondAttribute="trailing" constant="8" id="ZTU-aI-z5C"/>
-                                    <constraint firstAttribute="trailing" secondItem="837-Yj-Aet" secondAttribute="trailing" id="gbM-dF-Czs"/>
+                                    <constraint firstAttribute="trailing" secondItem="837-Yj-Aet" secondAttribute="trailing" constant="8" id="gbM-dF-Czs"/>
                                     <constraint firstAttribute="width" constant="260" id="h27-E4-g81">
                                         <variation key="widthClass=compact" constant="300"/>
                                     </constraint>
-                                    <constraint firstItem="dMY-BE-H0l" firstAttribute="leading" secondItem="ZgG-ci-h1J" secondAttribute="leading" constant="4" id="v4M-Ul-eJQ"/>
+                                    <constraint firstItem="dMY-BE-H0l" firstAttribute="leading" secondItem="ZgG-ci-h1J" secondAttribute="leading" constant="8" id="v4M-Ul-eJQ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -103,68 +107,20 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xxD-mZ-Y0y" customClass="RoundedView" customModule="wordcount" customModuleProvider="target">
-                                <rect key="frame" x="16" y="732.66666666666663" width="343" height="45.333333333333371"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OZ-Ad-43m">
-                                        <rect key="frame" x="16" y="1.6666666666667425" width="57" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="aBY-S0-b11"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" name="color_selectable"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Spaces">
-                                            <color key="titleColor" name="color_selectable"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onSpaceSettingButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HsT-a6-A8I"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWW-vZ-JJV">
-                                        <rect key="frame" x="89" y="1.6666666666667425" width="40" height="42"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="NJp-cB-T4n"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="tTr-sT-T3n"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="tintColor" name="color_selectable"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Clear">
-                                            <color key="titleColor" name="color_selectable"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onClearButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m30-JJ-JKk"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" name="bg_secondary"/>
-                                <constraints>
-                                    <constraint firstItem="3OZ-Ad-43m" firstAttribute="leading" secondItem="xxD-mZ-Y0y" secondAttribute="leading" constant="16" id="Ma9-ef-60O"/>
-                                    <constraint firstItem="3OZ-Ad-43m" firstAttribute="centerY" secondItem="xxD-mZ-Y0y" secondAttribute="centerY" id="Pds-b9-UN3"/>
-                                    <constraint firstItem="LWW-vZ-JJV" firstAttribute="centerY" secondItem="xxD-mZ-Y0y" secondAttribute="centerY" id="bHb-CA-Ffi"/>
-                                    <constraint firstItem="LWW-vZ-JJV" firstAttribute="leading" secondItem="3OZ-Ad-43m" secondAttribute="trailing" constant="16" id="s8Y-Wj-Ik1"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="bg_primary"/>
                         <constraints>
                             <constraint firstItem="ZgG-ci-h1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="DIK-72-nbn"/>
                             <constraint firstItem="ZgG-ci-h1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Fgn-QJ-XM2"/>
-                            <constraint firstItem="xxD-mZ-Y0y" firstAttribute="height" secondItem="ZgG-ci-h1J" secondAttribute="height" multiplier="1.08271" id="H69-T7-LSb"/>
                             <constraint firstItem="ZgG-ci-h1J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IWL-eQ-XVO"/>
                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OLm-Kj-ZxI"/>
                             <constraint firstAttribute="bottom" secondItem="Xep-Q3-YXK" secondAttribute="bottom" id="bd8-gU-dkN"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZgG-ci-h1J" secondAttribute="trailing" constant="16" id="d0h-Sp-sT9"/>
-                            <constraint firstItem="xxD-mZ-Y0y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="iQe-pz-G8s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xxD-mZ-Y0y" secondAttribute="bottom" id="jjL-5P-i7O"/>
-                            <constraint firstItem="xxD-mZ-Y0y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pbF-aE-30M"/>
                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="r6V-yA-peR"/>
                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rTa-a7-JpP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZgG-ci-h1J" secondAttribute="trailing" constant="16" id="sn8-8M-FHS"/>
                             <constraint firstItem="Xep-Q3-YXK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xbI-yo-g89"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xxD-mZ-Y0y" secondAttribute="trailing" constant="16" id="yYP-ED-Tem"/>
                             <constraint firstItem="ZgG-ci-h1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="zll-iT-FXd"/>
                         </constraints>
                         <variation key="default">
@@ -191,7 +147,6 @@
                         <outlet property="infoLabel" destination="BXT-Ho-JgY" id="0Uv-du-fF5"/>
                         <outlet property="infoView" destination="ZgG-ci-h1J" id="eGA-7p-Md0"/>
                         <outlet property="textView" destination="Xep-Q3-YXK" id="zZA-wB-Y1h"/>
-                        <outlet property="toolView" destination="xxD-mZ-Y0y" id="FMj-al-6gn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -747,6 +702,7 @@
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="text_accent"/>
     <resources>
+        <image name="baseline_space_bar_black_24pt" width="24" height="24"/>
         <image name="doc.on.clipboard" catalog="system" width="116" height="128"/>
         <image name="foreground.png" width="1024" height="1024"/>
         <image name="heart.circle.fill" catalog="system" width="128" height="121"/>
