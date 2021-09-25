@@ -32,6 +32,8 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         tableView.tableFooterView = footerView
         
         initData()
+        
+        performSegue(withIdentifier: "segCounter", sender: nil)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
