@@ -11,6 +11,7 @@
 "cancel" = "cancel";
 "clear" = "Clear all";
 "delete" = "Delete";
+
 "text_view_placeholder" = "Start typing (or paste)";
 "words" = "Words";
 "chars" = "Characters";
@@ -43,6 +44,9 @@
 "option_symbols_custom" = "Customize symbols to exclude";
 "alert_symbols_title" = "Symbols to exclude";
 "alert_symbols_content" = "";
+
+// ViewController
+"space_menu" = "Spaces";
 
 // SavedDocListViewController
 "section_saved_documents" = "Saved";

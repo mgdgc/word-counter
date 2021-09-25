@@ -11,6 +11,7 @@
 "cancel" = "취소";
 "clear" = "모두 지우기";
 "delete" = "삭제";
+
 "text_view_placeholder" = "글을 입력하거나 붙여넣기 하세요";
 "words" = "단어 수";
 "chars" = "글자 수";
@@ -41,6 +42,9 @@
 "option_display" = "표시";
 "option_symbols" = "특수기호 제외";
 "option_symbols_custom" = "제외할 특수기호 사용자화";
+
+// ViewController
+"space_menu" = "공백 설정";
 
 // SavedDocListViewController
 "section_saved_documents" = "저장됨";

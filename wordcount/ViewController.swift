@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var moreButton: UIButton!
+    @IBOutlet weak var spaceButton: UIButton!
     
     
     private var isEdited = false
@@ -52,6 +53,25 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         // InfoView settings
         infoView.showShadow()
         
+        // SpaceButton settins
+        if #available(iOS 14.0, *) {
+            var spaceButtonActions: [UIAction] = Array()
+            for t in [SpaceType.both, SpaceType.onlySpace, SpaceType.onlyEnter, SpaceType.neither] {
+                let action = UIAction(title: getSpaceTypeTitle(type: t), image: nil, handler: { _ in
+                    self.spaceType = t
+                    self.setInfoLabel()
+                })
+                spaceButtonActions.append(action)
+            }
+            let spaceButtonMenu = UIMenu(title: NSLocalizedString("space_menu", comment: ""), options: .displayInline, children: spaceButtonActions)
+            
+            spaceButton.menu = spaceButtonMenu
+            spaceButton.showsMenuAsPrimaryAction = true
+            
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     // MARK: - Button click listeners
@@ -81,38 +101,29 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     }
     
     @IBAction func onSpaceSettingButtonClick(_ sender: Any) {
-        let title = NSLocalizedString("alert_space", comment: "alert_space")
-        let message = NSLocalizedString("alert_space_msg", comment: "alert_space_msg") + getSpaceTypeTitle(type: spaceType)
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
-        
-        let both = UIAlertAction(title: getSpaceTypeTitle(type: .both), style: .default) { (action) in
-            self.spaceType = .both
-            self.setInfoLabel()
+        if #available(iOS 14.0, *) {
+            // No action required
+        } else {
+            let title = NSLocalizedString("alert_space", comment: "alert_space")
+            let message = NSLocalizedString("alert_space_msg", comment: "alert_space_msg") + getSpaceTypeTitle(type: spaceType)
+            
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            
+            for t in [SpaceType.both, SpaceType.onlySpace, SpaceType.onlyEnter, SpaceType.neither] {
+                let action = UIAlertAction(title: getSpaceTypeTitle(type: t), style: .default) { (action) in
+                    self.spaceType = t
+                    self.setInfoLabel()
+                }
+                alert.addAction(action)
+            }
+            
+            let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
+            alert.addAction(cancel)
+            
+            setActionSheet(alert, barButton: sender as? UIBarButtonItem)
+            
+            present(alert, animated: true, completion: nil)
         }
-        let onlySpace = UIAlertAction(title: getSpaceTypeTitle(type: .onlySpace), style: .default) { (action) in
-            self.spaceType = .onlySpace
-            self.setInfoLabel()
-        }
-        let onlyEnter = UIAlertAction(title: getSpaceTypeTitle(type: .onlyEnter), style: .default) { (action) in
-            self.spaceType = .onlyEnter
-            self.setInfoLabel()
-        }
-        let neither = UIAlertAction(title: getSpaceTypeTitle(type: .neither), style: .default) { (action) in
-            self.spaceType = .neither
-            self.setInfoLabel()
-        }
-        let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
-        
-        alert.addAction(both)
-        alert.addAction(onlySpace)
-        alert.addAction(onlyEnter)
-        alert.addAction(neither)
-        alert.addAction(cancel)
-        
-        setActionSheet(alert, barButton: sender as? UIBarButtonItem)
-        
-        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func onMoreButtonTouched(_ sender: FloatingMoreButton) {
