@@ -243,7 +243,7 @@
                     <navigationItem key="navigationItem" title="Word Counter" id="r37-dM-8Qj">
                         <barButtonItem key="leftBarButtonItem" image="info.circle" catalog="system" id="fpy-vS-jyd">
                             <connections>
-                                <segue destination="IqX-j3-Xnv" kind="show" id="zR6-uN-2Wx"/>
+                                <segue destination="IqX-j3-Xnv" kind="presentation" id="9QN-8n-0tG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -563,11 +563,11 @@
             <objects>
                 <viewController id="IqX-j3-Xnv" customClass="AboutViewController" customModule="wordcount" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vbY-08-uO1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojm-zz-VbA">
-                                <rect key="frame" x="0.0" y="242.33333333333334" width="375" height="327.66666666666663"/>
+                                <rect key="frame" x="0.0" y="215.33333333333334" width="375" height="327.66666666666663"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foreground.png" translatesAutoresizingMaskIntoConstraints="NO" id="DWN-9k-gfD">
                                         <rect key="frame" x="123.66666666666669" y="0.0" width="128" height="128"/>
@@ -632,13 +632,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choi Myung Geun" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3m-H5-DPU">
-                                <rect key="frame" x="0.0" y="757" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="703" width="375" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-yP-KKq">
-                                <rect key="frame" x="329" y="108" width="30" height="30"/>
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
                                 <connections>
                                     <action selector="onCloseButtonClick:" destination="IqX-j3-Xnv" eventType="touchUpInside" id="iKe-Af-qbL"/>
                                 </connections>
