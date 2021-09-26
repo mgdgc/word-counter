@@ -152,6 +152,7 @@
                         <outlet property="infoView" destination="ZgG-ci-h1J" id="eGA-7p-Md0"/>
                         <outlet property="spaceButton" destination="837-Yj-Aet" id="XLv-QY-kfg"/>
                         <outlet property="textView" destination="Xep-Q3-YXK" id="zZA-wB-Y1h"/>
+                        <outlet property="textViewBottom" destination="bd8-gU-dkN" id="HJW-ob-iFq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

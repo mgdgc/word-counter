@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     @IBOutlet weak var moreButton: UIButton!
     @IBOutlet weak var spaceButton: UIButton!
     
+    @IBOutlet weak var textViewBottom: NSLayoutConstraint!
+    
     
     private var isEdited = false
     private var spaceType: SpaceType = .both
@@ -50,6 +52,9 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         textView.textContainerInset = UIEdgeInsets(top: infoView.frame.height + 24, left: 16, bottom: 8, right: 16)
         textView.alpha = 0.35
         
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
         // InfoView settings
         infoView.showShadow()
         
@@ -72,6 +77,20 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
             // Fallback on earlier versions
         }
         
+    }
+    
+    @objc
+    func keyboardWillShow(_ sender: Notification) {
+        if let keyboardFrame: NSValue = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            let keyboardRectangle = keyboardFrame.cgRectValue
+            let keyboardHeight = keyboardRectangle.height
+            textViewBottom.constant = keyboardHeight
+        }
+    }
+    
+    @objc
+    func keyboardWillHide(_ sender: Notification) {
+        textViewBottom.constant = 0
     }
     
     // MARK: - Button click listeners
