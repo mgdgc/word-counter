@@ -69,6 +69,16 @@ class DataManager {
     
     public func saveDocument(document: Document) {
         guard let ud = UserDefaults(suiteName: DataManager.appGroupName) else { return }
+        
+        let ids = getIds()
+        for id in ids {
+            if (id == document.id) {
+                ud.removeObject(forKey: String(document.id))
+                ud.set(document.content, forKey: String(document.id))
+                return
+            }
+        }
+        
         addId(id: document.id)
         ud.set(document.content, forKey: String(document.id))
         ud.synchronize()

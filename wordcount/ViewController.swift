@@ -162,8 +162,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     private func save(_ barbutton: UIBarButtonItem?) {
         let alert = UIAlertController(title: NSLocalizedString("alert_save", comment: "alert_save"), message: NSLocalizedString("alert_save_message", comment: "alert_save_message"), preferredStyle: .actionSheet)
-        let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) {
-            action in
+        let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { action in
             self.saveDocument()
         }
         let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
@@ -178,33 +177,12 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     
     // MARK: - Document saving
     private func saveDocument() {
-        let manager = DataManager()
-        if let doc = document {
-            if !manager.saveDocument(doc: doc) {
-                let alert = UIAlertController(title: "Failed", message: "Failed", preferredStyle: .alert)
-                let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { (action) in
-                    
-                }
-                alert.addAction(confirm)
-                
-                present(alert, animated: true, completion: nil)
-            }
+        if let document = document {
+            DataManager().saveDocument(document: document)
+            
         } else {
-            let result = manager.addDocument(content: textView.text)
-            
-            switch result {
-            case .success:
-                break
-                
-            case .noAppGroup:
-                break
-            
-            case .tooManyItems:
-                break
-                
-            case .unknownError:
-                break
-            }
+            document = Document(content: textView.text)
+            DataManager().saveDocument(document: document!)
         }
     }
     
