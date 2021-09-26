@@ -143,8 +143,20 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         })
     }
     
-    @IBAction func onSaveButtonClick(_ sender: Any) {
-        save(sender as? UIBarButtonItem)
+    @IBAction func onSaveButtonClick(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: NSLocalizedString("alert_save", comment: "alert_save"), message: NSLocalizedString("alert_save_message", comment: "alert_save_message"), preferredStyle: .actionSheet)
+        let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { action in
+            self.saveDocument()
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
+        
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        
+        setActionSheet(alert, barButton: sender)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - BottomSheet configurations
@@ -158,21 +170,6 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         bottomSheetVC.modalPresentationStyle = .overFullScreen
         
         present(bottomSheetVC, animated: true, completion: nil)
-    }
-    
-    private func save(_ barbutton: UIBarButtonItem?) {
-        let alert = UIAlertController(title: NSLocalizedString("alert_save", comment: "alert_save"), message: NSLocalizedString("alert_save_message", comment: "alert_save_message"), preferredStyle: .actionSheet)
-        let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { action in
-            self.saveDocument()
-        }
-        let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
-        
-        alert.addAction(confirm)
-        alert.addAction(cancel)
-        
-        setActionSheet(alert, barButton: barbutton)
-        
-        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - Document saving

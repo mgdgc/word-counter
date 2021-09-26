@@ -141,7 +141,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Word counter" id="XsN-ue-VRE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCy-YR-haF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="HCy-YR-haF">
+                            <connections>
+                                <action selector="onSaveButtonClick:" destination="BYZ-38-t0r" id="0hF-go-YrR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="infoLabel" destination="BXT-Ho-JgY" id="0Uv-du-fF5"/>
