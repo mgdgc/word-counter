@@ -29,6 +29,7 @@
 		1C99929D2147620F00B42556 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C99929F2147620F00B42556 /* Localizable.strings */; };
 		1C9992A42147754B00B42556 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9992A32147754B00B42556 /* OptionsViewController.swift */; };
 		1CC632B521E8608C0035DA96 /* SymbolsToExcludeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC632B421E8608C0035DA96 /* SymbolsToExcludeViewController.swift */; };
+		1CEF8871270082F900EAB853 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEF8870270082F900EAB853 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		1C9992A02147621000B42556 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		1C9992A32147754B00B42556 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
 		1CC632B421E8608C0035DA96 /* SymbolsToExcludeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsToExcludeViewController.swift; sourceTree = "<group>"; };
+		1CEF8870270082F900EAB853 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1CF42B4C26EB5B39000B73B2 /* wordcountDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wordcountDebug.entitlements; sourceTree = "<group>"; };
 		1CFB852526EAE77900007CFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +175,7 @@
 				1C0CD48921DB6EC000DFA29E /* OptionsManager.swift */,
 				1C0CD48B21DC491500DFA29E /* Models.swift */,
 				1CC632B421E8608C0035DA96 /* SymbolsToExcludeViewController.swift */,
+				1CEF8870270082F900EAB853 /* SettingsViewController.swift */,
 			);
 			path = wordcount;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				1C23A9AB2164D27000E10C09 /* ContentViewController.swift in Sources */,
 				1C6B0C4E2148D0DF008E2800 /* AboutViewController.swift in Sources */,
 				1C5E7B4F2147A46D0034FFFC /* RoundedView.swift in Sources */,
+				1CEF8871270082F900EAB853 /* SettingsViewController.swift in Sources */,
 				1CC632B521E8608C0035DA96 /* SymbolsToExcludeViewController.swift in Sources */,
 				1C999266214758C300B42556 /* ViewController.swift in Sources */,
 				1C0CD48A21DB6EC000DFA29E /* OptionsManager.swift in Sources */,
