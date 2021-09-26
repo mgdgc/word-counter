@@ -47,7 +47,7 @@
 "space_menu" = "공백 설정";
 
 // SavedDocListViewController
-"section_saved_documents" = "저장됨";
+"section_saved_documents" = "저장된 항목";
 
 // !Update lists
 "alet_update" = "새로운 기능";
