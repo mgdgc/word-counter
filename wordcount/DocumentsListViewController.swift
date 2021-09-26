@@ -89,7 +89,7 @@ class DocumentsListViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (indexPath.section == 0) {
+        if (indexPath.section > 0) {
             if editingStyle == .delete {
                 self.dataManager.removeDocument(id: data[indexPath.row].id)
                 self.data.remove(at: indexPath.row)
