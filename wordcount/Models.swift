@@ -64,7 +64,7 @@ class Document {
         self.content = content
     }
     
-    convenience init(id: Int?, content: String?) {
+    convenience init(id: Int? = nil, content: String?) {
         var id = id
         if (id == nil) {
             id = Int(Date().timeIntervalSince1970 * 1000)
