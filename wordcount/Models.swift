@@ -55,15 +55,21 @@ enum DisplayOption: String {
     }
 }
 
-class SavedDocObject {
-    var position: Int
-    var content: String
-    init(position: Int, content: String) {
-        self.position = position
+class Document {
+    var id: Int
+    var content: String?
+    
+    init (id: Int, content: String?) {
+        self.id = id
         self.content = content
     }
-    public func getKey() -> String {
-        return DataManager.keySavedDoc + String(position)
+    
+    convenience init(id: Int?, content: String?) {
+        var id = id
+        if (id == nil) {
+            id = Int(Date().timeIntervalSince1970 * 1000)
+        }
+        self.init(id: id!, content: content)
     }
 }
 
