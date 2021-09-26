@@ -23,7 +23,7 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
     private var spaceType: SpaceType = .both
     private var displayOptions: [DisplayOption] = [.characters, .words]
     
-    private var document: SavedDocObject?
+    private var document: Document?
     
     override func viewDidLoad() {
         super.viewDidLoad()

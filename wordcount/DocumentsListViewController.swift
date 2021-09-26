@@ -12,12 +12,12 @@ protocol OnSavedItemSelectedListener {
     func onSavedItemSelected(id: String);
 }
 
-class SavedDocListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DocumentsListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     
     private let dataManager = DataManager()
-    private var data: [SavedDocObject] = Array()
+    private var data: [Document] = Array()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +34,13 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
         initData()
         
         performSegue(withIdentifier: "segCounter", sender: nil)
+    }
+    
+    // MARK: - Data initialization
+    
+    private func initData() {
+        self.data = dataManager.getSavedDocuments()
+        tableView.reloadData()
     }
     
     // MARK:  - TableView
@@ -80,14 +87,7 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (indexPath.section == 0) {
             if editingStyle == .delete {
-                if !self.dataManager.removeDocument(doc: data[indexPath.row]) {
-                    let alert = UIAlertController(title: "Failed", message: "Failed", preferredStyle: .alert)
-                    let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { (action) in
-                        
-                    }
-                    alert.addAction(confirm)
-                    present(alert, animated: true, completion: nil)
-                }
+                self.dataManager.removeDocument(id: data[indexPath.row].id)
                 self.data.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -133,11 +133,6 @@ class SavedDocListViewController: UIViewController, UITableViewDelegate, UITable
                 popoverController.permittedArrowDirections = []
             }
         }
-    }
-    
-    private func initData() {
-        data = dataManager.getSavedDocuments()
-        tableView.reloadData()
     }
     
 }
