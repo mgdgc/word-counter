@@ -36,6 +36,10 @@ class DocumentsListViewController: UIViewController, UITableViewDelegate, UITabl
         performSegue(withIdentifier: "segCounter", sender: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        initData()
+    }
+    
     // MARK: - Data initialization
     
     private func initData() {

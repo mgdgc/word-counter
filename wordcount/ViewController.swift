@@ -126,28 +126,11 @@ class ViewController: UIViewController, UITextViewDelegate, UIPopoverPresentatio
         }
     }
     
-    @IBAction func onMoreButtonTouched(_ sender: FloatingMoreButton) {
-        FloatingMoreButton.animate(withDuration: 0.2, animations: {
-            sender.layer.backgroundColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0).cgColor
-            sender.layer.shadowOffset = CGSize(width: 0, height: 3)
-            sender.layer.shadowOpacity = 0.4
-        })
-    }
-    
-    @IBAction func onMoreButtonTouchUp(_ sender: FloatingMoreButton) {
-        addBottomSheet()
-        FloatingMoreButton.animate(withDuration: 0.2, animations: {
-            sender.layer.backgroundColor = UIColor.white.cgColor
-            sender.layer.shadowOffset = CGSize(width: 0, height: 2)
-            sender.layer.shadowOpacity = 0.3
-        })
-    }
-    
     @IBAction func onSaveButtonClick(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: NSLocalizedString("alert_save", comment: "alert_save"), message: NSLocalizedString("alert_save_message", comment: "alert_save_message"), preferredStyle: .actionSheet)
         let confirm = UIAlertAction(title: NSLocalizedString("confirm", comment: "confirm"), style: .default) { action in
             self.saveDocument()
-            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
         let cancel = UIAlertAction(title: NSLocalizedString("cancel", comment: "cancel"), style: .cancel, handler: nil)
         
